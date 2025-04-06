@@ -5,6 +5,7 @@ import {
   loginUser,
   logoutUser,
   updateUserProfile,
+  checkAuth,
 } from "../controllers/auth.controller.js";
 
 const router = express.Router();
@@ -15,4 +16,7 @@ router.get("/logout", logoutUser);
 
 router.put("/update-profile", protectRoute, updateUserProfile);
 
+router.get("/check", protectRoute, checkAuth)
+
 export default router;
+ 
